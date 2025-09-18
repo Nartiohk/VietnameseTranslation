@@ -77,7 +77,7 @@ jobs:
           path: "bin/Release"
 
       - name: Zip For Release
-        run: 7z a ${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}.zip VietnameseTranslation/VietnameseTranslation/bin/Release/**
+        run: 7z a ${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}.zip VietnameseTranslation/bin/Release/**
 
 
       - name: Create Release
