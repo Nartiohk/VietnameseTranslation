@@ -69,7 +69,7 @@ jobs:
 
       - name: Build Mod
         working-directory: VietnameseTranslation
-        run: dotnet build -c Release
+        run: dotnet build -c Release -o ./bin/Release
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
