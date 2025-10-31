@@ -68,16 +68,17 @@ jobs:
         run: if (Test-Path ${{ env.PROJ_NAME }}.csproj.user) { rm ${{ env.PROJ_NAME }}.csproj.user }
 
       - name: Build Mod
+        working-directory: VietnameseTranslation
         run: dotnet build -c Release
 
       - name: Upload Artifact
-        uses: "actions/upload-artifact@v4"
+        uses: actions/upload-artifact@v4
         with:
           name: "${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}"
-          path: "bin/Release"
-
+          path: "VietnameseTranslation/bin/Release"
+      
       - name: Zip For Release
-        run: 7z a ${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}.zip bin/Release/**
+        run: 7z a ${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}.zip VietnameseTranslation/bin/Release/**
 
 
       - name: Create Release
